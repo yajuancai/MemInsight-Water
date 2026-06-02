@@ -1,4 +1,4 @@
-import { FileSpreadsheet, Star, GitCompare, Briefcase } from 'lucide-react'
+import { FileSpreadsheet, Star, Briefcase } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import { useWorkspace } from '../../contexts/WorkspaceContext'
 import { exportToXlsx } from '../../utils/exportData'
@@ -37,55 +37,22 @@ export function ExportSection() {
           </ActionBtn>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-6">
-          <Panel title={t('export.favorites')} icon={Star}>
-            {favorites.length === 0 ? (
-              <p className="text-sm text-slate-500">{t('export.emptyFav')}</p>
-            ) : (
-              <ul className="space-y-2 text-sm">
-                {favorites.map((r) => (
-                  <li key={r.id} className="flex justify-between font-mono rounded-lg px-2 py-1.5 hover:bg-brand-500/5 dark:hover:bg-brand-500/10">
-                    <span>{r.id} — {r.name}</span>
-                    <button type="button" onClick={() => removeFavorite(r.id)} className="text-red-500 text-xs hover:text-red-600">
-                      ×
-                    </button>
-                  </li>
-                ))}
-              </ul>
-            )}
-          </Panel>
-
-          <Panel title={t('export.compareTable')} icon={GitCompare}>
-            {favorites.length === 0 ? (
-              <p className="text-sm text-slate-500">{t('export.emptyFav')}</p>
-            ) : (
-              <div className="overflow-x-auto scrollbar-hidden rounded-lg border border-slate-200/80 dark:border-slate-700/80">
-                <table className="data-table w-full text-xs">
-                  <thead>
-                    <tr>
-                      <th>ID</th>
-                      <th>Type</th>
-                      <th>Flux</th>
-                      <th>Sep.</th>
-                      <th>TOC%</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {favorites.map((r) => (
-                      <tr key={r.id}>
-                        <td>{r.id}</td>
-                        <td>{r.membraneType}</td>
-                        <td>{r.flux}</td>
-                        <td>{r.monoDivalentFactor}</td>
-                        <td>{r.tocRejection}</td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-            )}
-          </Panel>
-        </div>
+        <Panel title={t('export.favorites')} icon={Star}>
+          {favorites.length === 0 ? (
+            <p className="text-sm text-slate-500">{t('export.emptyFav')}</p>
+          ) : (
+            <ul className="space-y-2 text-sm">
+              {favorites.map((r) => (
+                <li key={r.id} className="flex justify-between font-mono rounded-lg px-2 py-1.5 hover:bg-brand-500/5 dark:hover:bg-brand-500/10">
+                  <span>{r.id} — {r.name}</span>
+                  <button type="button" onClick={() => removeFavorite(r.id)} className="text-red-500 text-xs hover:text-red-600">
+                    ×
+                  </button>
+                </li>
+              ))}
+            </ul>
+          )}
+        </Panel>
       </div>
     </section>
   )

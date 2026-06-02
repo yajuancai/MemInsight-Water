@@ -176,13 +176,11 @@
     "subtitle": "Save, compare, and prepare publication-ready datasets",
     "favorites": "Favorites",
     "savedFilters": "Saved filter presets",
-    "compare": "Batch compare",
     "exportExcel": "Export favorites (Excel)",
     "exportCsv": "Export CSV",
     "paperDataset": "Generate paper plotting dataset",
     "saveFilter": "Save current filters",
     "addFavorite": "Add selected to favorites",
-    "compareTable": "Comparison table",
     "emptyFav": "No favorites yet — select rows in Screening and click Favorite"
   },
   "ai": {

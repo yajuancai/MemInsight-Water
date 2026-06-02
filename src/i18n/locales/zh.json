@@ -176,13 +176,11 @@
     "subtitle": "收藏、对比、生成论文作图数据集",
     "favorites": "收藏数据",
     "savedFilters": "已保存筛选条件",
-    "compare": "批量对比",
     "exportExcel": "导出收藏数据",
     "exportCsv": "导出 CSV",
     "paperDataset": "一键生成论文作图数据集",
     "saveFilter": "保存当前筛选",
     "addFavorite": "将选中项加入收藏",
-    "compareTable": "对比表格",
     "emptyFav": "暂无收藏 — 请在筛选工作台勾选数据后点击「收藏」"
   },
   "ai": {
