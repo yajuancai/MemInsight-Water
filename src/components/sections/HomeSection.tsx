@@ -33,8 +33,7 @@ const STAT_VALUES: Record<(typeof STAT_CONFIG)[number]['key'], number> = {
 
 export function HomeSection({ onScrollDown }: { onScrollDown: () => void }) {
   const { t } = useTranslation()
-  // 默认 SVG；若已将 home-hero-membrane.png 放入 public/ 可改为 false
-  const [heroImageFailed, setHeroImageFailed] = useState(true)
+  const [heroImageFailed, setHeroImageFailed] = useState(false)
 
   return (
     <section className="snap-section relative flex flex-col overflow-hidden bg-gradient-to-b from-slate-50 via-[#f4f9fd] to-white dark:from-slate-950 dark:via-slate-950 dark:to-slate-900">
@@ -81,14 +80,14 @@ export function HomeSection({ onScrollDown }: { onScrollDown: () => void }) {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.45, delay: 0.1 }}
             >
-              <div className="relative w-full max-h-[380px] aspect-[5/4] overflow-hidden">
+              <div className="relative w-full max-h-[400px] aspect-[5/4] overflow-hidden rounded-2xl">
                 {heroImageFailed ? (
                   <MembraneWaterSchematic embedded />
                 ) : (
                   <img
                     src={HERO_IMAGE}
                     alt={t('home.heroImageAlt')}
-                    className="absolute inset-0 h-full w-full object-cover object-[76%_42%] select-none dark:brightness-[1.06] dark:contrast-[1.04]"
+                    className="absolute inset-0 h-full w-full object-contain object-center select-none"
                     draggable={false}
                     fetchPriority="high"
                     onError={() => setHeroImageFailed(true)}
