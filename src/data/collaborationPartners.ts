@@ -25,8 +25,10 @@ export function projectMapSvg(lng: number, lat: number) {
 }
 
 export const globalPartners: GlobalPartner[] = [
-  { id: 'hit', institution: 'Harbin Institute of Technology', country: 'China', region: 'Asia', focus: 'Membrane separation & water treatment', lng: 126.63, lat: 45.75 },
+  { id: 'hit', institution: 'HIT', country: 'China', region: 'Asia', focus: 'Membrane separation & water treatment', lng: 126.63, lat: 45.75 },
+  { id: 'tsinghua', institution: '清华大学', country: 'China', region: 'Asia', focus: 'Membrane science & environmental engineering', lng: 116.33, lat: 40.00 },
   { id: 'mit', institution: 'MIT', country: 'USA', region: 'North America', focus: 'Membrane materials & transport', lng: -71.09, lat: 42.36 },
+  { id: 'yale', institution: '耶鲁大学', country: 'USA', region: 'North America', focus: 'Water science & membrane chemistry', lng: -72.92, lat: 41.31 },
   { id: 'nus', institution: 'NUS', country: 'Singapore', region: 'Asia', focus: 'Water treatment membranes', lng: 103.77, lat: 1.30 },
   { id: 'eth', institution: 'ETH Zürich', country: 'Switzerland', region: 'Europe', focus: 'Thin-film composite NF/RO', lng: 8.55, lat: 47.38 },
   { id: 'tongji', institution: 'Tongji University', country: 'China', region: 'Asia', focus: 'Municipal water & desalination', lng: 121.50, lat: 31.28 },
@@ -40,9 +42,13 @@ export const globalPartners: GlobalPartner[] = [
 
 /** Hub-to-hub links for network animation */
 export const networkLinks: [string, string][] = [
+  ['hit', 'tsinghua'],
+  ['tsinghua', 'tongji'],
   ['hit', 'tongji'],
   ['hit', 'nus'],
   ['hit', 'kyoto'],
+  ['mit', 'yale'],
+  ['yale', 'toronto'],
   ['mit', 'imperial'],
   ['imperial', 'eth'],
   ['eth', 'tu'],
