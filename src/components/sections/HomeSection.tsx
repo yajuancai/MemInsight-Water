@@ -61,7 +61,7 @@ export function HomeSection({ onScrollDown }: { onScrollDown: () => void }) {
               transition={{ duration: 0.45, delay: 0.05 }}
             >
               <p className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-600 dark:text-brand-300 mb-3">
-                Membrane · Water · Data
+                {t('home.eyebrow')}
               </p>
               <h1 className="text-3xl md:text-[2.35rem] font-bold text-navy-900 dark:text-white leading-tight tracking-tight">
                 {t('home.title')}

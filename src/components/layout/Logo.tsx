@@ -73,8 +73,8 @@ export function Logo({ compact = false }: { compact?: boolean }) {
       {!compact && (
         <div className="leading-none">
           <p className="text-[15px] font-semibold tracking-tight">
-            <span className="text-navy-900 dark:text-white">Membraneinsight</span>
-            <span className="text-brand-600 dark:text-brand-400"> water</span>
+            <span className="text-navy-900 dark:text-white">MemInsight</span>
+            <span className="text-brand-600 dark:text-brand-400"> Water</span>
           </p>
           <p className="mt-1 text-[10px] font-medium tracking-wide text-slate-500 dark:text-slate-400 uppercase hidden sm:block">
             Membrane · Data · Insight
