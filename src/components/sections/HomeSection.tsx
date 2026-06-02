@@ -53,7 +53,7 @@ export function HomeSection({ onScrollDown }: { onScrollDown: () => void }) {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <motion.div className="grid w-full grid-cols-1 lg:grid-cols-[1.05fr_1fr] items-center gap-8 lg:gap-10">
+          <motion.div className="grid w-full grid-cols-1 lg:grid-cols-[0.95fr_1.15fr] items-center gap-8 lg:gap-10">
             <motion.div
               className="flex flex-col justify-center py-2 lg:py-4"
               initial={{ opacity: 0, x: -8 }}
@@ -75,19 +75,19 @@ export function HomeSection({ onScrollDown }: { onScrollDown: () => void }) {
             </motion.div>
 
             <motion.div
-              className="flex items-center justify-center min-h-[240px] sm:min-h-[280px] lg:min-h-[360px]"
+              className="flex items-center justify-center min-h-[280px] sm:min-h-[340px] lg:min-h-[440px]"
               initial={{ opacity: 0, x: 8 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.45, delay: 0.1 }}
             >
-              <div className="relative w-full max-h-[400px] aspect-[5/4] overflow-hidden rounded-2xl">
+              <div className="relative w-full max-h-[480px] lg:max-h-[520px] aspect-[5/4] overflow-hidden rounded-2xl">
                 {heroImageFailed ? (
                   <MembraneWaterSchematic embedded />
                 ) : (
                   <img
                     src={HERO_IMAGE}
                     alt={t('home.heroImageAlt')}
-                    className="absolute inset-0 h-full w-full object-contain object-center select-none"
+                    className="absolute inset-0 h-full w-full object-contain object-center select-none scale-[1.08] lg:scale-110"
                     draggable={false}
                     fetchPriority="high"
                     onError={() => setHeroImageFailed(true)}

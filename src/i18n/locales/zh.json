@@ -213,7 +213,7 @@
     "coreTeam": "核心团队",
     "coreTeamDesc": "项目负责人、指导教师与领域专家构成项目决策与方向指导层",
     "projectTeam": "项目成员",
-    "projectTeamDesc": "数据挖掘、文献挖掘、数据库与平台开发等执行角色",
+    "projectTeamDesc": "数据挖掘、文献挖掘、数据库与机器学习等执行角色",
     "roles": {
       "projectLead": "项目负责人",
       "advisor": "指导教师",

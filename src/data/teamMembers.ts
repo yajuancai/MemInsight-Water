@@ -71,18 +71,4 @@ export const PROJECT_TEAM: TeamPerson[] = [
     focus: '性能预测 · 材料筛选 · 模型评估',
     tags: ['ML', '膜性能'],
   },
-  {
-    id: 'testing',
-    roleKey: 'membraneTesting',
-    name: '膜性能测试',
-    focus: '通量/截留 · 稳定性 · 抗污染评价',
-    tags: ['分离性能', '实验'],
-  },
-  {
-    id: 'platform',
-    roleKey: 'platformDev',
-    name: '平台开发',
-    focus: '前端交互 · 可视化 · 工作区功能',
-    tags: ['React', '数据可视化'],
-  },
 ]

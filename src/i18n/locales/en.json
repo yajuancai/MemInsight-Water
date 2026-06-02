@@ -213,7 +213,7 @@
     "coreTeam": "Core team",
     "coreTeamDesc": "Project lead, faculty advisor, and domain expert guide strategy and direction",
     "projectTeam": "Project members",
-    "projectTeamDesc": "Execution roles including data mining, literature mining, database, and platform development",
+    "projectTeamDesc": "Execution roles including data mining, literature mining, database, and machine learning",
     "roles": {
       "projectLead": "Project lead",
       "advisor": "Faculty advisor",
