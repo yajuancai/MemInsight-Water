@@ -1,0 +1,68 @@
+export interface GlobalPartner {
+  id: string
+  institution: string
+  country: string
+  region: string
+  focus: string
+  lng: number
+  lat: number
+}
+
+/** Equirectangular projection → percent (0–100) for map overlay */
+export function projectMapPercent(lng: number, lat: number) {
+  return {
+    x: ((lng + 180) / 360) * 100,
+    y: ((90 - lat) / 180) * 100,
+  }
+}
+
+/** SVG viewBox 0 0 100 50 (2:1) */
+export function projectMapSvg(lng: number, lat: number) {
+  return {
+    x: ((lng + 180) / 360) * 100,
+    y: ((90 - lat) / 180) * 50,
+  }
+}
+
+export const globalPartners: GlobalPartner[] = [
+  { id: 'hit', institution: 'Harbin Institute of Technology', country: 'China', region: 'Asia', focus: 'Membrane separation & water treatment', lng: 126.63, lat: 45.75 },
+  { id: 'mit', institution: 'MIT', country: 'USA', region: 'North America', focus: 'Membrane materials & transport', lng: -71.09, lat: 42.36 },
+  { id: 'nus', institution: 'NUS', country: 'Singapore', region: 'Asia', focus: 'Water treatment membranes', lng: 103.77, lat: 1.30 },
+  { id: 'eth', institution: 'ETH Zürich', country: 'Switzerland', region: 'Europe', focus: 'Thin-film composite NF/RO', lng: 8.55, lat: 47.38 },
+  { id: 'tongji', institution: 'Tongji University', country: 'China', region: 'Asia', focus: 'Municipal water & desalination', lng: 121.50, lat: 31.28 },
+  { id: 'unsw', institution: 'UNSW Sydney', country: 'Australia', region: 'Oceania', focus: 'Fouling & anti-fouling', lng: 151.23, lat: -33.92 },
+  { id: 'tu', institution: 'TU Delft', country: 'Netherlands', region: 'Europe', focus: 'Process design & ion separation', lng: 4.36, lat: 52.01 },
+  { id: 'kaust', institution: 'KAUST', country: 'Saudi Arabia', region: 'Middle East', focus: 'Desalination & NF', lng: 39.10, lat: 22.31 },
+  { id: 'toronto', institution: 'U of Toronto', country: 'Canada', region: 'North America', focus: 'Polyamide IP & characterization', lng: -79.40, lat: 43.66 },
+  { id: 'kyoto', institution: 'Kyoto University', country: 'Japan', region: 'Asia', focus: 'Organic solvent NF', lng: 135.77, lat: 35.01 },
+  { id: 'imperial', institution: 'Imperial College', country: 'UK', region: 'Europe', focus: 'Sustainable separation', lng: -0.17, lat: 51.50 },
+]
+
+/** Hub-to-hub links for network animation */
+export const networkLinks: [string, string][] = [
+  ['hit', 'tongji'],
+  ['hit', 'nus'],
+  ['hit', 'kyoto'],
+  ['mit', 'imperial'],
+  ['imperial', 'eth'],
+  ['eth', 'tu'],
+  ['tu', 'kaust'],
+  ['kaust', 'nus'],
+  ['nus', 'tongji'],
+  ['tongji', 'kyoto'],
+  ['kyoto', 'unsw'],
+  ['unsw', 'nus'],
+  ['mit', 'toronto'],
+  ['toronto', 'mit'],
+]
+
+export const COLLAB_AREA_KEYS = [
+  'dataShare',
+  'aiMembrane',
+  'literatureExtract',
+  'highThroughput',
+  'waterTreatment',
+  'openPlatform',
+] as const
+
+export type CollabAreaKey = (typeof COLLAB_AREA_KEYS)[number]

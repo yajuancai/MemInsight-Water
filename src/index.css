@@ -1,0 +1,255 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --header-h: 4.25rem;
+  --scrollport-h: calc(100dvh - var(--header-h));
+}
+
+body {
+  @apply font-sans antialiased bg-white text-navy-900;
+  margin: 0;
+  overflow: hidden;
+}
+
+body.dark {
+  @apply bg-slate-950 text-slate-100;
+}
+
+#root {
+  height: 100dvh;
+  overflow: hidden;
+}
+
+.snap-container {
+  margin-top: var(--header-h);
+  height: var(--scrollport-h);
+  overflow-y: auto;
+  overflow-x: hidden;
+  scroll-snap-type: none;
+  scroll-behavior: auto;
+  overscroll-behavior-y: contain;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(59, 130, 246, 0.45) transparent;
+}
+
+.snap-section {
+  min-height: var(--scrollport-h);
+  box-sizing: border-box;
+}
+
+/* 内部横向溢出可滚动但不显示滚动条 */
+.scrollbar-hidden {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.scrollbar-hidden::-webkit-scrollbar {
+  display: none;
+}
+
+.snap-container::-webkit-scrollbar {
+  width: 6px;
+}
+.snap-container::-webkit-scrollbar-thumb {
+  @apply rounded-full bg-brand-400/50;
+}
+
+/* 首页背景科技网点 */
+.home-network-bg {
+  background-image:
+    radial-gradient(circle at 1px 1px, rgba(59, 130, 246, 0.15) 1px, transparent 0);
+  background-size: 32px 32px;
+}
+
+/* 筛选 / 工作区区块网格背景 */
+.section-grid-bg-screening {
+  background-image:
+    linear-gradient(rgba(37, 99, 235, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(37, 99, 235, 0.05) 1px, transparent 1px);
+  background-size: 40px 40px;
+  mask-image: radial-gradient(ellipse 85% 75% at 50% 35%, black 15%, transparent 72%);
+}
+.dark .section-grid-bg-screening {
+  background-image:
+    linear-gradient(rgba(96, 165, 250, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(96, 165, 250, 0.06) 1px, transparent 1px);
+}
+
+.section-grid-bg-workspace {
+  background-image:
+    linear-gradient(rgba(37, 99, 235, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(6, 182, 212, 0.05) 1px, transparent 1px);
+  background-size: 44px 44px;
+  mask-image: radial-gradient(ellipse 90% 80% at 40% 45%, black 12%, transparent 78%);
+}
+.dark .section-grid-bg-workspace {
+  background-image:
+    linear-gradient(rgba(96, 165, 250, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(34, 211, 238, 0.05) 1px, transparent 1px);
+}
+
+.data-table th {
+  @apply sticky top-0 z-10 bg-slate-50 dark:bg-slate-800 text-left text-xs font-semibold uppercase tracking-wider px-3 py-2 border-b border-slate-200 dark:border-slate-700 text-navy-800 dark:text-slate-200 font-sans;
+}
+.data-table td {
+  @apply px-3 py-2 text-sm border-b border-slate-100 dark:border-slate-800 font-sans;
+}
+.data-table tr:hover td {
+  @apply bg-brand-50 dark:bg-brand-500/5;
+}
+
+.range-slider {
+  @apply w-full h-1.5 rounded-full appearance-none cursor-pointer bg-slate-200 dark:bg-slate-700;
+}
+.range-slider::-webkit-slider-thumb {
+  @apply appearance-none w-3.5 h-3.5 rounded-full bg-brand-500 shadow-md;
+}
+
+.range-dual-wrap {
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.range-dual-wrap:hover {
+  @apply border-brand-200/80 dark:border-brand-500/30;
+  box-shadow: 0 2px 12px rgba(37, 99, 235, 0.06);
+}
+.dark .range-dual-wrap:hover {
+  box-shadow: 0 2px 12px rgba(59, 130, 246, 0.1);
+}
+
+.range-dual-badge {
+  @apply inline-flex min-w-[2rem] justify-center rounded-md border border-slate-200/90 bg-white px-1.5 py-0.5 font-mono text-[10px] font-semibold text-slate-600 dark:border-slate-600 dark:bg-slate-900/80 dark:text-slate-300;
+}
+.range-dual-badge-accent {
+  @apply border-brand-200/80 bg-brand-50 text-brand-700 dark:border-brand-500/35 dark:bg-brand-500/15 dark:text-brand-300;
+}
+
+.range-dual-number-wrap {
+  @apply inline-flex min-w-0 items-center gap-0.5 rounded-md border border-slate-200/90 bg-white px-1.5 py-0.5 dark:border-slate-600 dark:bg-slate-900/80;
+}
+.range-dual-number-wrap-accent {
+  @apply border-brand-200/80 bg-brand-50/90 dark:border-brand-500/35 dark:bg-brand-500/10;
+}
+.range-dual-number {
+  @apply min-w-0 flex-1 bg-transparent text-right text-sm font-semibold tabular-nums text-slate-800 outline-none dark:text-slate-100;
+  -moz-appearance: textfield;
+}
+.range-dual-number-accent {
+  @apply text-brand-700 dark:text-brand-200;
+}
+.range-dual-number::-webkit-outer-spin-button,
+.range-dual-number::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.range-dual-number:focus {
+  @apply rounded-sm ring-1 ring-brand-400/50;
+}
+.range-dual-number-unit {
+  @apply shrink-0 text-xs font-medium leading-none text-slate-500 dark:text-slate-400;
+}
+
+.range-dual-track {
+  @apply absolute inset-x-0 h-2 rounded-full;
+  background: linear-gradient(180deg, #e2e8f0 0%, #cbd5e1 100%);
+  box-shadow: inset 0 1px 2px rgba(15, 23, 42, 0.08);
+}
+.dark .range-dual-track {
+  background: linear-gradient(180deg, #334155 0%, #1e293b 100%);
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.35);
+}
+
+.range-dual-fill {
+  @apply absolute h-2 rounded-full pointer-events-none;
+  background: linear-gradient(90deg, #3b82f6 0%, #2563eb 50%, #06b6d4 100%);
+  box-shadow: 0 0 8px rgba(37, 99, 235, 0.35);
+}
+.dark .range-dual-fill {
+  background: linear-gradient(90deg, #60a5fa 0%, #3b82f6 50%, #22d3ee 100%);
+  box-shadow: 0 0 10px rgba(96, 165, 250, 0.25);
+}
+
+.range-dual-input {
+  @apply absolute inset-x-0 w-full h-7 appearance-none bg-transparent pointer-events-none;
+}
+.range-dual-input::-webkit-slider-runnable-track {
+  @apply h-2 appearance-none bg-transparent border-0;
+}
+.range-dual-input::-moz-range-track {
+  @apply h-2 appearance-none bg-transparent border-0;
+}
+.range-dual-input::-webkit-slider-thumb {
+  @apply appearance-none cursor-pointer pointer-events-auto;
+  width: 18px;
+  height: 18px;
+  margin-top: -5px;
+  border-radius: 9999px;
+  border: 2px solid #2563eb;
+  background: radial-gradient(circle at 35% 35%, #ffffff 0%, #eff6ff 45%, #dbeafe 100%);
+  box-shadow:
+    0 1px 2px rgba(15, 23, 42, 0.12),
+    0 2px 6px rgba(37, 99, 235, 0.28);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.range-dual-input::-webkit-slider-thumb:hover {
+  transform: scale(1.08);
+  box-shadow:
+    0 2px 4px rgba(15, 23, 42, 0.14),
+    0 4px 10px rgba(37, 99, 235, 0.35);
+}
+.range-dual-input::-webkit-slider-thumb:active {
+  transform: scale(1.12);
+}
+.range-dual-input::-moz-range-thumb {
+  @apply cursor-pointer pointer-events-auto border-0;
+  width: 18px;
+  height: 18px;
+  border-radius: 9999px;
+  border: 2px solid #2563eb;
+  background: radial-gradient(circle at 35% 35%, #ffffff 0%, #eff6ff 45%, #dbeafe 100%);
+  box-shadow:
+    0 1px 2px rgba(15, 23, 42, 0.12),
+    0 2px 6px rgba(37, 99, 235, 0.28);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.range-dual-input::-moz-range-thumb:hover {
+  transform: scale(1.08);
+}
+.dark .range-dual-input::-webkit-slider-thumb {
+  border-color: #60a5fa;
+  background: radial-gradient(circle at 35% 35%, #f8fafc 0%, #1e3a8a 55%, #1d4ed8 100%);
+  box-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.35),
+    0 2px 8px rgba(59, 130, 246, 0.4);
+}
+.dark .range-dual-input::-moz-range-thumb {
+  border-color: #60a5fa;
+  background: radial-gradient(circle at 35% 35%, #f8fafc 0%, #1e3a8a 55%, #1d4ed8 100%);
+  box-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.35),
+    0 2px 8px rgba(59, 130, 246, 0.4);
+}
+.range-dual-input-max {
+  z-index: 4;
+}
+.range-dual-input-min {
+  z-index: 3;
+}
+.range-dual-input:focus-visible::-webkit-slider-thumb {
+  outline: 2px solid #93c5fd;
+  outline-offset: 2px;
+}
+.range-dual-input:focus-visible::-moz-range-thumb {
+  outline: 2px solid #93c5fd;
+  outline-offset: 2px;
+}
+
+.glass-panel {
+  @apply backdrop-blur-md bg-white/85 dark:bg-slate-900/80 border border-slate-200/70 dark:border-slate-700/60 shadow-card;
+}
+
+/* 全球合作网络地图 */
+.world-map-shell {
+  box-shadow: none;
+}
