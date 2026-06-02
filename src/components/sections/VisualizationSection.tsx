@@ -12,6 +12,7 @@ type ChartKind = 'scatter' | 'heatmap' | 'box' | 'radar'
 type AxisKey =
   | 'poreSize'
   | 'flux'
+  | 'baseMembraneFlux'
   | 'crosslinkDegree'
   | 'surfaceCharge'
   | 'monoDivalentFactor'
@@ -28,8 +29,18 @@ function getSaltRejection(r: MembraneRecord): number {
   return vals.length > 0 ? vals[0] : 0
 }
 
+function getBaseMembraneFlux(r: MembraneRecord): number {
+  const raw = r.moduleFields.support_material_water_permeance
+  if (raw) {
+    const n = Number(raw)
+    if (!Number.isNaN(n)) return n
+  }
+  return 0
+}
+
 function getAxisValue(r: MembraneRecord, key: AxisKey): number {
   if (key === 'saltRejection') return getSaltRejection(r)
+  if (key === 'baseMembraneFlux') return getBaseMembraneFlux(r)
   return r[key] as number
 }
 
@@ -107,6 +118,7 @@ export function VisualizationSection() {
   const axisOptions: { key: AxisKey; label: string }[] = [
     { key: 'poreSize', label: t('columns.poreSize') },
     { key: 'flux', label: t('columns.flux') },
+    { key: 'baseMembraneFlux', label: t('columns.baseMembraneFlux') },
     { key: 'saltRejection', label: t('columns.saltRejection') },
     { key: 'crosslinkDegree', label: t('columns.crosslinkDegree') },
     { key: 'surfaceCharge', label: t('columns.surfaceCharge') },
