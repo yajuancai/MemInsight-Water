@@ -62,7 +62,7 @@ export function CollaborationSection({
                   <h4 className="font-semibold text-slate-900 dark:text-white">
                     {t(`collab.areas.${key}`)}
                   </h4>
-                  <p className="text-xs text-slate-500 mt-2 leading-relaxed">
+                  <p className="text-[11px] sm:text-xs text-slate-500 mt-2 leading-snug whitespace-nowrap overflow-hidden text-ellipsis">
                     {t(`collab.areasDesc.${key}`)}
                   </p>
                   <span className="inline-block mt-3 text-[10px] uppercase tracking-wider text-brand-600 dark:text-brand-400">

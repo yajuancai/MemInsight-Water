@@ -245,12 +245,12 @@
       "openPlatform": "Open-source data platform development"
     },
     "areasDesc": {
-      "dataShare": "Co-build standardized performance datasets with cross-lab interoperability.",
-      "aiMembrane": "ML-driven structure–performance prediction and materials screening.",
-      "literatureExtract": "Extract fabrication, characterization, and performance from publications.",
-      "highThroughput": "High-throughput testing pipelines for large-scale correlations.",
-      "waterTreatment": "Joint R&D on NF/RO ion separation, fouling, and stability.",
-      "openPlatform": "Open tools and APIs for global membrane science communities."
+      "dataShare": "Standardized datasets for cross-lab sharing and co-publication",
+      "aiMembrane": "ML-driven membrane screening and performance optimization",
+      "literatureExtract": "Auto-extract fabrication, characterization, and performance",
+      "highThroughput": "High-throughput analysis for structure–performance links",
+      "waterTreatment": "NF/RO ion separation, fouling control, and stability R&D",
+      "openPlatform": "Open tools and APIs for global membrane data sharing"
     },
     "networkTitle": "Global Network",
     "networkSubtitle": "Partner universities, institutes, and research focus areas worldwide",

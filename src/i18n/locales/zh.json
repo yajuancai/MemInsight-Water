@@ -245,12 +245,12 @@
       "openPlatform": "开源数据平台开发"
     },
     "areasDesc": {
-      "dataShare": "共建标准化膜性能数据集，推动跨实验室数据互认与联合发表。",
-      "aiMembrane": "结合机器学习预测膜结构与分离性能，加速材料筛选与工艺优化。",
-      "literatureExtract": "从文献中自动抽取制备条件、表征与性能参数，扩充数据库覆盖。",
-      "highThroughput": "建立高通量测试与数据分析流程，支撑大规模结构–性能关联研究。",
-      "waterTreatment": "面向纳滤/反渗透等体系的离子分离、抗污染与稳定性联合攻关。",
-      "openPlatform": "开发开源工具链与 API，服务全球膜科学社区的数据共享与复现。"
+      "dataShare": "共建标准数据集，推动跨实验室互认与联合发表",
+      "aiMembrane": "机器学习预测膜性能，加速材料筛选优化",
+      "literatureExtract": "自动抽取文献制备、表征与性能参数",
+      "highThroughput": "高通量测试分析，支撑结构–性能研究",
+      "waterTreatment": "纳滤/反渗透离子分离、抗污染与稳定性攻关",
+      "openPlatform": "开源工具与 API，服务全球膜数据共享"
     },
     "networkTitle": "全球合作网络（Global Network）",
     "networkSubtitle": "动态展示合作高校、研究机构与研究方向",

@@ -259,7 +259,7 @@ function CollabPanel() {
               >
                 <Icon className="w-7 h-7 text-brand-500 mb-3" />
                 <h4 className="font-semibold">{t(`collab.areas.${key}`)}</h4>
-                <p className="text-xs text-slate-500 mt-2">{t(`collab.areasDesc.${key}`)}</p>
+                <p className="text-[11px] sm:text-xs text-slate-500 mt-2 leading-snug whitespace-nowrap overflow-hidden text-ellipsis">{t(`collab.areasDesc.${key}`)}</p>
               </motion.div>
             )
           })}
