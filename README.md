@@ -52,8 +52,10 @@ git push -u origin main
 ```
 
 4. 打开 GitHub 仓库 → **Settings** → **Pages** → **Build and deployment**  
-   - Source 选 **GitHub Actions**  
-5. 等待 Actions 跑完（约 2–3 分钟），访问：
+   - Source 选 **Deploy from a branch**  
+   - Branch 选 **gh-pages**，文件夹选 **/ (root)**  
+   - ⚠️ 不要选 `main` 分支根目录，否则会白屏（发布的是未构建源码）  
+5. 推送代码后，在 **Actions** 等待 **Deploy to GitHub Pages** 跑完（约 2–3 分钟），访问：
 
 `https://你的用户名.github.io/MemInsight-Water/`
 
