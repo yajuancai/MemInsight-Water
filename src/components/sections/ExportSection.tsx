@@ -1,4 +1,4 @@
-import { FileSpreadsheet, Star, Briefcase } from 'lucide-react'
+import { FileSpreadsheet, Star } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import { useWorkspace } from '../../contexts/WorkspaceContext'
 import { exportToXlsx } from '../../utils/exportData'
@@ -12,19 +12,9 @@ export function ExportSection() {
     <section className="snap-section relative overflow-hidden py-20 px-6">
       <SectionAtmosphere variant="workspace" />
       <div className="relative z-10 max-w-6xl mx-auto">
-        <header className="mb-10">
-          <p className="text-xs font-mono uppercase tracking-widest text-brand-600 dark:text-brand-400 mb-2">
-            {t('export.badge')}
-          </p>
-          <div className="flex items-start gap-3">
-            <div className="mt-1 flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-brand-500/15 to-amber-500/10 text-brand-600 dark:text-brand-400 ring-1 ring-brand-500/20">
-              <Briefcase className="h-5 w-5" />
-            </div>
-            <div>
-              <h2 className="text-2xl font-bold text-slate-900 dark:text-white">{t('export.title')}</h2>
-              <p className="text-slate-600 dark:text-slate-400 mt-1">{t('export.subtitle')}</p>
-            </div>
-          </div>
+        <header className="mb-10 text-center">
+          <h2 className="text-2xl font-bold text-slate-900 dark:text-white">{t('export.title')}</h2>
+          <p className="text-slate-600 dark:text-slate-400 mt-1">{t('export.subtitle')}</p>
         </header>
 
         <div className="mb-8">

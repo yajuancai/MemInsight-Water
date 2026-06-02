@@ -17,21 +17,23 @@ function MemberCard({
       className={`glass-panel rounded-xl text-center flex flex-col items-center ${
         isCore
           ? 'p-5 sm:p-6 border-2 border-brand-500/25 dark:border-brand-400/30 shadow-soft'
-          : 'p-4 sm:p-5 min-w-0 flex-1 sm:flex-none sm:w-[10rem] md:w-[11rem]'
+          : 'p-4 sm:p-5 min-w-0 flex-1 sm:flex-none sm:w-[11rem] md:w-[12rem]'
       }`}
     >
       {person.photo ? (
         <img
           src={person.photo}
           alt={person.name}
-          className={`rounded-full object-cover object-top shrink-0 border-2 border-white dark:border-slate-700 shadow-sm bg-white ${
-            isCore ? 'w-24 h-24 sm:w-28 sm:h-28 mb-3.5' : 'w-14 h-14 sm:w-16 sm:h-16 mb-3'
+          className={`object-cover object-top shrink-0 border-2 border-white dark:border-slate-700 shadow-sm bg-white rounded-full ${
+            isCore
+              ? 'w-28 h-28 sm:w-32 sm:h-32 mb-3.5'
+              : 'w-22 h-22 sm:w-24 sm:h-24 mb-3'
           }`}
         />
       ) : (
         <div
-          className={`rounded-full bg-gradient-to-br from-brand-400 to-brand-700 flex items-center justify-center text-white font-bold shrink-0 ${
-            isCore ? 'w-24 h-24 sm:w-28 sm:h-28 text-xl mb-3.5' : 'w-14 h-14 sm:w-16 sm:h-16 text-base mb-3'
+          className={`bg-gradient-to-br from-brand-400 to-brand-700 flex items-center justify-center text-white font-bold shrink-0 rounded-full ${
+            isCore ? 'w-28 h-28 sm:w-32 sm:h-32 text-xl mb-3.5' : 'w-22 h-22 sm:w-24 sm:h-24 text-base mb-3'
           }`}
         >
           {person.name[0]}
@@ -39,17 +41,17 @@ function MemberCard({
       )}
       <span
         className={`font-medium text-brand-600 dark:text-brand-400 ${
-          isCore ? 'text-sm sm:text-base' : 'text-xs sm:text-sm'
+          isCore ? 'text-sm sm:text-base' : 'text-sm sm:text-base'
         }`}
       >
-        {person.photo && !isCore ? person.name : t(`team.roles.${person.roleKey}`)}
+        {t(`team.roles.${person.roleKey}`)}
       </span>
       <h4
         className={`font-semibold text-slate-900 dark:text-white ${
           isCore ? 'mt-1 text-base sm:text-lg' : 'mt-1 text-sm sm:text-base'
         }`}
       >
-        {person.photo && !isCore ? t(`team.roles.${person.roleKey}`) : person.name}
+        {person.name}
       </h4>
       {isCore && person.focus && (
         <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1.5 leading-relaxed max-w-[14rem]">{person.focus}</p>

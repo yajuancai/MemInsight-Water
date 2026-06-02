@@ -32,14 +32,14 @@ export function OverviewSection({ onGoScreening }: { onGoScreening: (module: Mod
   return (
     <section className="snap-section bg-gradient-to-b from-[#eef6fc] to-white dark:from-slate-950 dark:to-slate-900 py-20 px-6">
       <div className="max-w-7xl mx-auto">
-        <header className="mb-10 text-center md:text-left">
+        <header className="mb-10 text-center">
           <p className="text-xs font-mono uppercase tracking-widest text-brand-600 dark:text-brand-400 mb-2">
             {t('overview.badge')}
           </p>
           <h2 className="text-2xl md:text-3xl font-bold text-slate-900 dark:text-white">
             {t('overview.title')}
           </h2>
-          <p className="text-slate-600 dark:text-slate-400 mt-2 max-w-3xl">{t('overview.subtitle')}</p>
+          <p className="text-slate-600 dark:text-slate-400 mt-2 max-w-3xl mx-auto">{t('overview.subtitle')}</p>
         </header>
 
         <div className="grid sm:grid-cols-2 xl:grid-cols-3 gap-5">

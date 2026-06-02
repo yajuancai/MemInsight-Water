@@ -195,7 +195,7 @@ export function VisualizationSection() {
   return (
     <section className="snap-section bg-white dark:bg-slate-950 py-20 px-6">
       <div className="max-w-7xl mx-auto">
-        <header className="mb-6">
+        <header className="mb-6 text-center">
           <h2 className="text-2xl font-bold">{t('viz.title')}</h2>
           <p className="text-slate-500">{t('viz.subtitle')}</p>
         </header>

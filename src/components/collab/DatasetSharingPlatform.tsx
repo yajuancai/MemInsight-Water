@@ -10,11 +10,11 @@ export function DatasetSharingPlatform() {
   const totalRecords = SHARED_DATASETS.reduce((sum, d) => sum + d.recordCount, 0)
 
   return (
-    <div className="mb-14">
+    <div className="mb-14 text-center">
       <h3 className="text-lg font-semibold mb-2">{t('collab.datasetPlatformTitle')}</h3>
-      <p className="text-sm text-slate-500 mb-6 max-w-3xl">{t('collab.datasetPlatformSubtitle')}</p>
+      <p className="text-sm text-slate-500 mb-6 max-w-3xl mx-auto">{t('collab.datasetPlatformSubtitle')}</p>
 
-      <div className="grid grid-cols-3 gap-3 mb-6 max-w-xl">
+      <div className="grid grid-cols-3 gap-3 mb-6 max-w-xl mx-auto">
         <StatChip label={t('collab.datasetStatTotal')} value={String(SHARED_DATASETS.length)} />
         <StatChip label={t('collab.datasetStatRecords')} value={totalRecords.toLocaleString()} />
         <StatChip

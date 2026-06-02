@@ -177,7 +177,7 @@ function TeamPanel({
         <h3 className="text-lg font-semibold mb-4">{t('team.members')}</h3>
         <TeamOrgChart />
       </div>
-      <h3 className="text-lg font-semibold mb-4">{t('team.impact')}</h3>
+      <h3 className="text-lg font-semibold mb-4 text-center">{t('team.impact')}</h3>
       <div className="grid md:grid-cols-4 gap-4 mb-6">
         {[
           { label: t('home.stats.literature'), v: databaseStats.literatureCount },
@@ -191,7 +191,7 @@ function TeamPanel({
           </div>
         ))}
       </div>
-      <p className="text-sm text-slate-500 mb-2">{t('team.growth')}</p>
+      <p className="text-sm text-slate-500 mb-2 text-center">{t('team.growth')}</p>
       <div className="glass-panel rounded-xl p-4 h-48">
         <ResponsiveContainer width="100%" height="100%">
           <AreaChart data={growthData}>
@@ -244,7 +244,7 @@ function CollabPanel() {
           </span>
         </p>
       </div>
-      <div className="mb-14">
+      <div className="mb-14 text-center">
         <h3 className="text-lg font-semibold mb-5">{t('collab.areasTitle')}</h3>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {COLLAB_AREA_KEYS.map((key, i) => {
@@ -266,12 +266,12 @@ function CollabPanel() {
         </div>
       </div>
       <DatasetSharingPlatform />
-      <div className="mb-14 -mx-6 md:mx-0">
-        <h3 className="text-lg font-semibold mb-2 px-6 md:px-0">{t('collab.networkTitle')}</h3>
+      <div className="mb-14 -mx-6 md:mx-0 text-center">
+        <h3 className="text-xl md:text-2xl font-semibold mb-2 px-6 md:px-0">{t('collab.networkTitle')}</h3>
         <p className="text-sm text-slate-500 mb-4 px-6 md:px-0">{t('collab.networkSubtitle')}</p>
         <WorldMapNetwork />
       </div>
-      <div>
+      <div className="text-center">
         <h3 className="text-lg font-semibold mb-5">{t('collab.contactTitle')}</h3>
         <div className="grid md:grid-cols-2 gap-6">
           <div className="glass-panel rounded-xl p-6 space-y-4">
