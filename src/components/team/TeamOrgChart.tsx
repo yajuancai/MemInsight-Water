@@ -16,8 +16,8 @@ function MemberCard({
     <div
       className={`glass-panel rounded-xl text-center flex flex-col items-center ${
         isCore
-          ? 'p-4 border-2 border-brand-500/25 dark:border-brand-400/30 shadow-soft'
-          : 'p-5 sm:p-6 min-w-0 flex-1 sm:flex-none sm:w-[11rem] md:w-[12.5rem]'
+          ? 'p-5 sm:p-6 border-2 border-brand-500/25 dark:border-brand-400/30 shadow-soft'
+          : 'p-4 sm:p-5 min-w-0 flex-1 sm:flex-none sm:w-[10rem] md:w-[11rem]'
       }`}
     >
       {person.photo ? (
@@ -25,13 +25,13 @@ function MemberCard({
           src={person.photo}
           alt={person.name}
           className={`rounded-full object-cover object-top shrink-0 border-2 border-white dark:border-slate-700 shadow-sm bg-white ${
-            isCore ? 'w-20 h-20 sm:w-24 sm:h-24 mb-3' : 'w-16 h-16 sm:w-20 sm:h-20 mb-3.5'
+            isCore ? 'w-24 h-24 sm:w-28 sm:h-28 mb-3.5' : 'w-14 h-14 sm:w-16 sm:h-16 mb-3'
           }`}
         />
       ) : (
         <div
           className={`rounded-full bg-gradient-to-br from-brand-400 to-brand-700 flex items-center justify-center text-white font-bold shrink-0 ${
-            isCore ? 'w-20 h-20 sm:w-24 sm:h-24 text-lg mb-3' : 'w-16 h-16 sm:w-20 sm:h-20 text-lg mb-3.5'
+            isCore ? 'w-24 h-24 sm:w-28 sm:h-28 text-xl mb-3.5' : 'w-14 h-14 sm:w-16 sm:h-16 text-base mb-3'
           }`}
         >
           {person.name[0]}
@@ -39,23 +39,27 @@ function MemberCard({
       )}
       <span
         className={`font-medium text-brand-600 dark:text-brand-400 ${
-          isCore ? 'text-sm' : 'text-sm sm:text-base'
+          isCore ? 'text-sm sm:text-base' : 'text-xs sm:text-sm'
         }`}
       >
         {person.photo && !isCore ? person.name : t(`team.roles.${person.roleKey}`)}
       </span>
-      <h4 className={`font-semibold text-slate-900 dark:text-white ${isCore ? 'mt-1 text-sm' : 'mt-1.5 text-base sm:text-lg'}`}>
+      <h4
+        className={`font-semibold text-slate-900 dark:text-white ${
+          isCore ? 'mt-1 text-base sm:text-lg' : 'mt-1 text-sm sm:text-base'
+        }`}
+      >
         {person.photo && !isCore ? t(`team.roles.${person.roleKey}`) : person.name}
       </h4>
       {isCore && person.focus && (
-        <p className="text-[11px] text-slate-500 dark:text-slate-400 mt-1.5 leading-relaxed max-w-[12rem]">{person.focus}</p>
+        <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1.5 leading-relaxed max-w-[14rem]">{person.focus}</p>
       )}
       {isCore && person.tags && person.tags.length > 0 && (
         <div className="flex flex-wrap justify-center gap-1 mt-2">
           {person.tags.map((tag) => (
             <span
               key={tag}
-              className="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300"
+              className="text-[11px] px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300"
             >
               {tag}
             </span>
@@ -69,7 +73,7 @@ function MemberCard({
 export function TeamOrgChart() {
   return (
     <div className="mb-12">
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 md:gap-4 max-w-3xl mx-auto">
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-5 max-w-4xl mx-auto">
         {CORE_TEAM.map((person) => (
           <MemberCard key={person.id} person={person} variant="core" />
         ))}

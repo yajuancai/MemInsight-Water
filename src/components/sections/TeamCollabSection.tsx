@@ -163,16 +163,20 @@ function TeamPanel({
           ))}
         </div>
       </div>
-      <h3 className="text-lg font-semibold mb-4">{t('team.capabilities')}</h3>
-      <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-3 mb-12">
-        {caps.map((c) => (
-          <div className="glass-panel rounded-lg p-3 text-xs text-center" key={c}>
-            {t(`team.caps.${c}`)}
-          </div>
-        ))}
+      <div className="mb-12 text-center">
+        <h3 className="text-lg font-semibold mb-4">{t('team.capabilities')}</h3>
+        <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-3 max-w-5xl mx-auto">
+          {caps.map((c) => (
+            <div className="glass-panel rounded-lg p-3 text-xs text-center" key={c}>
+              {t(`team.caps.${c}`)}
+            </div>
+          ))}
+        </div>
       </div>
-      <h3 className="text-lg font-semibold mb-4">{t('team.members')}</h3>
-      <TeamOrgChart />
+      <div className="mb-12 text-center">
+        <h3 className="text-lg font-semibold mb-4">{t('team.members')}</h3>
+        <TeamOrgChart />
+      </div>
       <h3 className="text-lg font-semibold mb-4">{t('team.impact')}</h3>
       <div className="grid md:grid-cols-4 gap-4 mb-6">
         {[
