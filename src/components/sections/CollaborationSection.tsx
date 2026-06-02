@@ -12,7 +12,7 @@ const AREA_ICONS = [Database, Brain, FileSearch, Activity, Droplets, Globe2]
 
 const CONTACT = {
   email: 'collab@membraneinsight-water.org',
-  github: 'https://github.com/membraneinsight-water',
+  github: 'https://github.com/yajuancai/MemInsight-Water',
   papers: 'https://doi.org/search?q=membrane+database',
   upload: '#data-upload',
 }
@@ -104,7 +104,7 @@ export function CollaborationSection({
                 icon={Github}
                 label="GitHub"
                 href={CONTACT.github}
-                value="membraneinsight-water"
+                value="yajuancai/MemInsight-Water"
               />
               <ContactRow
                 icon={FileText}

@@ -80,7 +80,7 @@ export function WorldMapNetwork() {
                 onMouseEnter={() => setActiveId(p.id)}
                 onFocus={() => setActiveId(p.id)}
                 onClick={() => setActiveId(p.id)}
-                aria-label={p.institution}
+                aria-label={p.fullName}
               >
                 <span
                   className={`absolute inset-0 rounded-full -m-3 animate-ping ${
@@ -124,9 +124,9 @@ export function WorldMapNetwork() {
             <div className="flex items-start gap-3">
               <span className="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-amber-400 shadow-[0_0_8px_rgba(251,191,36,0.85)]" />
               <div>
-                <p className="font-semibold text-cyan-50">{active.institution}</p>
+                <p className="font-semibold text-cyan-50">{active.fullName}</p>
                 <p className="mt-0.5 text-xs text-cyan-400/80">
-                  {active.country} · {active.region}
+                  {active.institution} · {active.country} · {active.region}
                 </p>
                 <p className="mt-2 text-xs leading-relaxed text-slate-400">{active.focus}</p>
               </div>

@@ -276,7 +276,7 @@ function CollabPanel() {
         <div className="grid md:grid-cols-2 gap-6">
           <div className="glass-panel rounded-xl p-6 space-y-4">
             <ContactRow icon={Mail} label={t('collab.email')} href={`mailto:${CONTACT_EMAIL}`} value={CONTACT_EMAIL} />
-            <ContactRow icon={Github} label="GitHub" href="https://github.com/membraneinsight-water" value="membraneinsight-water" />
+            <ContactRow icon={Github} label="GitHub" href="https://github.com/yajuancai/MemInsight-Water" value="yajuancai/MemInsight-Water" />
             <ContactRow icon={FileText} label={t('collab.papers')} href="https://doi.org" value={t('collab.papersLink')} />
             <ContactRow icon={Upload} label={t('collab.dataUpload')} href="#upload" value={t('collab.uploadHint')} />
           </div>
