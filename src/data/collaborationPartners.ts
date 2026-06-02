@@ -26,18 +26,15 @@ export function projectMapSvg(lng: number, lat: number) {
 
 export const globalPartners: GlobalPartner[] = [
   { id: 'hit', institution: 'HIT', country: 'China', region: 'Asia', focus: 'Membrane separation & water treatment', lng: 126.63, lat: 45.75 },
-  { id: 'tsinghua', institution: '清华大学', country: 'China', region: 'Asia', focus: 'Membrane science & environmental engineering', lng: 116.33, lat: 40.00 },
+  { id: 'tsinghua', institution: 'Tsinghua University', country: 'China', region: 'Asia', focus: 'Membrane science & environmental engineering', lng: 116.33, lat: 40.00 },
   { id: 'mit', institution: 'MIT', country: 'USA', region: 'North America', focus: 'Membrane materials & transport', lng: -71.09, lat: 42.36 },
-  { id: 'yale', institution: '耶鲁大学', country: 'USA', region: 'North America', focus: 'Water science & membrane chemistry', lng: -72.92, lat: 41.31 },
+  { id: 'yale', institution: 'Yale University', country: 'USA', region: 'North America', focus: 'Water science & membrane chemistry', lng: -72.92, lat: 41.31 },
   { id: 'nus', institution: 'NUS', country: 'Singapore', region: 'Asia', focus: 'Water treatment membranes', lng: 103.77, lat: 1.30 },
-  { id: 'eth', institution: 'ETH Zürich', country: 'Switzerland', region: 'Europe', focus: 'Thin-film composite NF/RO', lng: 8.55, lat: 47.38 },
   { id: 'tongji', institution: 'Tongji University', country: 'China', region: 'Asia', focus: 'Municipal water & desalination', lng: 121.50, lat: 31.28 },
-  { id: 'unsw', institution: 'UNSW Sydney', country: 'Australia', region: 'Oceania', focus: 'Fouling & anti-fouling', lng: 151.23, lat: -33.92 },
   { id: 'tu', institution: 'TU Delft', country: 'Netherlands', region: 'Europe', focus: 'Process design & ion separation', lng: 4.36, lat: 52.01 },
   { id: 'kaust', institution: 'KAUST', country: 'Saudi Arabia', region: 'Middle East', focus: 'Desalination & NF', lng: 39.10, lat: 22.31 },
   { id: 'toronto', institution: 'U of Toronto', country: 'Canada', region: 'North America', focus: 'Polyamide IP & characterization', lng: -79.40, lat: 43.66 },
   { id: 'kyoto', institution: 'Kyoto University', country: 'Japan', region: 'Asia', focus: 'Organic solvent NF', lng: 135.77, lat: 35.01 },
-  { id: 'imperial', institution: 'Imperial College', country: 'UK', region: 'Europe', focus: 'Sustainable separation', lng: -0.17, lat: 51.50 },
 ]
 
 /** Hub-to-hub links for network animation */
@@ -49,15 +46,12 @@ export const networkLinks: [string, string][] = [
   ['hit', 'kyoto'],
   ['mit', 'yale'],
   ['yale', 'toronto'],
-  ['mit', 'imperial'],
-  ['imperial', 'eth'],
-  ['eth', 'tu'],
+  ['mit', 'tu'],
   ['tu', 'kaust'],
   ['kaust', 'nus'],
   ['nus', 'tongji'],
   ['tongji', 'kyoto'],
-  ['kyoto', 'unsw'],
-  ['unsw', 'nus'],
+  ['kyoto', 'nus'],
   ['mit', 'toronto'],
   ['toronto', 'mit'],
 ]
