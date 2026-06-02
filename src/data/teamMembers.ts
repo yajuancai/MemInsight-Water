@@ -1,3 +1,5 @@
+import { publicAsset } from '../utils/publicAsset'
+
 export interface TeamPerson {
   id: string
   roleKey: string
@@ -13,7 +15,7 @@ export const CORE_TEAM: TeamPerson[] = [
     id: 'lead',
     roleKey: 'projectLead',
     name: '蔡雅娟',
-    photo: '/team/cai-yajuan.png',
+    photo: publicAsset('team/cai-yajuan.png'),
     focus: '项目统筹 · 数据库架构 · 膜数据标准',
     tags: ['项目管理', '数据库'],
   },
@@ -21,7 +23,7 @@ export const CORE_TEAM: TeamPerson[] = [
     id: 'advisor',
     roleKey: 'advisor',
     name: '王盼盼',
-    photo: '/team/wang-panpan.png',
+    photo: publicAsset('team/wang-panpan.png'),
     focus: '研究方向把握 · 学术指导 · 成果把关',
     tags: ['膜分离', '水处理'],
   },
@@ -29,7 +31,7 @@ export const CORE_TEAM: TeamPerson[] = [
     id: 'expert',
     roleKey: 'domainExpert',
     name: '马军院士',
-    photo: '/team/ma-jun.png',
+    photo: publicAsset('team/ma-jun.png'),
     focus: '水处理与膜分离 · 学术引领 · 战略咨询',
     tags: ['院士', '水处理'],
   },
@@ -41,7 +43,7 @@ export const PROJECT_TEAM: TeamPerson[] = [
     id: 'data-mining',
     roleKey: 'dataMining',
     name: '翟亚茹',
-    photo: '/team/zhai-yaru.png',
+    photo: publicAsset('team/zhai-yaru.png'),
     focus: '特征工程 · 关联规则 · 结构–性能建模',
     tags: ['Python', '统计分析'],
   },
@@ -49,7 +51,7 @@ export const PROJECT_TEAM: TeamPerson[] = [
     id: 'literature',
     roleKey: 'literatureMining',
     name: '刘欣',
-    photo: '/team/liu-xin.png',
+    photo: publicAsset('team/liu-xin.png'),
     focus: '文献采集 · 实体抽取 · 描述符规范化',
     tags: ['NLP', '知识抽取'],
   },
@@ -57,7 +59,7 @@ export const PROJECT_TEAM: TeamPerson[] = [
     id: 'database',
     roleKey: 'databaseEngineer',
     name: '廖俊剑',
-    photo: '/team/liao-junjian.png',
+    photo: publicAsset('team/liao-junjian.png'),
     focus: 'Schema 设计 · 数据清洗 · 接口与导出',
     tags: ['PostgreSQL', 'ETL'],
   },
@@ -65,7 +67,7 @@ export const PROJECT_TEAM: TeamPerson[] = [
     id: 'ml',
     roleKey: 'mlEngineer',
     name: '周睿',
-    photo: '/team/zhou-rui.png',
+    photo: publicAsset('team/zhou-rui.png'),
     focus: '性能预测 · 材料筛选 · 模型评估',
     tags: ['ML', '膜性能'],
   },

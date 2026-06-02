@@ -2,6 +2,7 @@ import { motion } from 'framer-motion'
 import { useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { globalPartners, networkLinks, projectMapPercent, projectMapSvg } from '../../data/collaborationPartners'
+import { publicAsset } from '../../utils/publicAsset'
 
 const partnerById = Object.fromEntries(globalPartners.map((p) => [p.id, p]))
 
@@ -32,7 +33,7 @@ export function WorldMapNetwork() {
       >
         <div className="relative aspect-[2/1] w-full min-h-[300px] md:min-h-[420px]">
           <img
-            src="/world-map-network.png"
+            src={publicAsset('world-map-network.png')}
             alt=""
             className="absolute inset-0 h-full w-full object-cover object-center select-none"
             draggable={false}

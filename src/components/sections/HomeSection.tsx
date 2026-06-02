@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { motion } from 'framer-motion'
 import {
   ChevronDown,
@@ -8,9 +9,11 @@ import {
   Microscope,
 } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
+import { MembraneWaterSchematic } from '../home/MembraneWaterSchematic'
 import { databaseStats } from '../../data/mockMembranes'
+import { publicAsset } from '../../utils/publicAsset'
 
-const HERO_IMAGE = '/home-hero-membrane.png'
+const HERO_IMAGE = publicAsset('home-hero-membrane.png')
 
 const STAT_CONFIG = [
   { key: 'materials' as const, icon: Layers },
@@ -30,6 +33,8 @@ const STAT_VALUES: Record<(typeof STAT_CONFIG)[number]['key'], number> = {
 
 export function HomeSection({ onScrollDown }: { onScrollDown: () => void }) {
   const { t } = useTranslation()
+  // 默认 SVG；若已将 home-hero-membrane.png 放入 public/ 可改为 false
+  const [heroImageFailed, setHeroImageFailed] = useState(true)
 
   return (
     <section className="snap-section relative flex flex-col overflow-hidden bg-gradient-to-b from-slate-50 via-[#f4f9fd] to-white dark:from-slate-950 dark:via-slate-950 dark:to-slate-900">
@@ -77,13 +82,18 @@ export function HomeSection({ onScrollDown }: { onScrollDown: () => void }) {
               transition={{ duration: 0.45, delay: 0.1 }}
             >
               <div className="relative w-full max-h-[380px] aspect-[5/4] overflow-hidden">
-                <img
-                  src={HERO_IMAGE}
-                  alt={t('home.heroImageAlt')}
-                  className="absolute inset-0 h-full w-full object-cover object-[76%_42%] select-none dark:brightness-[1.06] dark:contrast-[1.04]"
-                  draggable={false}
-                  fetchPriority="high"
-                />
+                {heroImageFailed ? (
+                  <MembraneWaterSchematic embedded />
+                ) : (
+                  <img
+                    src={HERO_IMAGE}
+                    alt={t('home.heroImageAlt')}
+                    className="absolute inset-0 h-full w-full object-cover object-[76%_42%] select-none dark:brightness-[1.06] dark:contrast-[1.04]"
+                    draggable={false}
+                    fetchPriority="high"
+                    onError={() => setHeroImageFailed(true)}
+                  />
+                )}
               </div>
             </motion.div>
           </motion.div>
